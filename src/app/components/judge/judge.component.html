@@ -1,0 +1,7 @@
+<div class="main-container">
+  <app-navbar></app-navbar>
+  <div class="space"></div>
+  <app-introduccion *ngIf="_navigationService.actualView == 'introduccion'"></app-introduccion>
+  <app-categorias *ngIf="_navigationService.actualView == 'categorias'"></app-categorias>
+  <app-scores *ngIf="_navigationService.actualView == 'scores'"></app-scores>
+</div>

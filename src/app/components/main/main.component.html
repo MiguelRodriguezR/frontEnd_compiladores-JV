@@ -1,0 +1,8 @@
+<div class="main-container">
+  <div class="login" *ngIf="!_sessionService.activeSession">
+    <app-login-form (submitEM)='login($event)'>Your Form</app-login-form>
+  </div>
+  <div class="app" *ngIf="_sessionService.activeSession">
+    <app-judge></app-judge>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="tab-container">
+  <div class="card-category" *ngFor="let categoria of categorias" (click)="getProblems(categoria)">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>{{categoria.name}}</mat-card-title>
+      </mat-card-header>
+      <!--<img mat-card-image [src]="categoria.img" alt="{{categoria.name}}">-->
+      <div class="image" [ngStyle]="{'background-image': 'url('+categoria.img+')'}"></div>
+      <mat-card-content>
+        <p>
+          {{categoria.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

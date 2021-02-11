@@ -1,0 +1,10 @@
+<div class="main-container">
+  <div class="left">
+    <button mat-button (click)="_navigationService.setView('introduccion')">Introduccion</button>
+    <button mat-button (click)="_navigationService.setView('categorias')">Categorias</button>
+    <button mat-button (click)="_navigationService.setView('scores')">Scores</button>
+  </div>
+  <div class="right">
+    <button mat-button (click)="_sessionService.destroySession()">Cerrar Session</button>
+  </div>
+</div>
