@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CATEGORIES} from "../../../services/constants";
+import {CATEGORIES} from '../../../services/constants';
+import {NavigationService} from '../../../services/navigation.service';
+import {JudgeService} from '../../../services/judge.service';
 
 @Component({
   selector: 'app-categorias',
@@ -10,12 +12,15 @@ export class CategoriasComponent implements OnInit {
 
   categorias = CATEGORIES;
 
-  constructor() { }
+  constructor(private navigationService: NavigationService,
+              private judgeService: JudgeService) { }
 
   ngOnInit(): void {
+
   }
 
   getProblems(categoria) {
-    console.log(categoria);
+    this.judgeService.selectedCategory = categoria.name;
+    this.navigationService.setView('listaProblemas');
   }
 }

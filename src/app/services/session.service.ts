@@ -27,7 +27,7 @@ export class SessionService {
     this.activeSession = this.getSession();
   }
 
-  destroySession(){
+  destroySession() {
     window.sessionStorage.removeItem('session');
     this.activeSession = this.getSession();
   }

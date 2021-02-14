@@ -1,0 +1,16 @@
+<div class="tab-container">
+  <div class="title">Lista de problemas de categoria: {{_judgeService.selectedCategory}}</div>
+  <div class="problems">
+    <mat-card *ngFor="let problem of problems" class="card">
+      <div class="top">
+        <div class="s-title">{{problem.title}}</div>
+        <mat-card-content>
+          {{problem.description}}
+        </mat-card-content>
+      </div>
+      <mat-card-actions class="actions">
+        <button mat-button (click)="tryProblem(problem)">RESOLVER</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

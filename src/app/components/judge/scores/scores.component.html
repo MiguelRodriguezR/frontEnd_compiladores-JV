@@ -1,3 +1,23 @@
 <div class="tab-container">
-  <p>scores works!</p>
+  <div class="title">Puntajes por usuario</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Puntaje</th>
+        <th>Problemas resueltos</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.email}}</td>
+      <td>{{user.solvedProblems.length}}</td>
+      <td>
+        <div class="problems">
+          <div class="problem" *ngFor="let problem of user.solvedProblems">{{getProblemName(problem)}}, </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>

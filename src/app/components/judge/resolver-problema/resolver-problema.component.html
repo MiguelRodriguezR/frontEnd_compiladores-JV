@@ -1,0 +1,44 @@
+<div class="tab-container">
+  <div class="title">{{problem.title}}</div>
+  <div class="content">
+    <div class="left">
+      <div class="description">
+        <div class="sub-franja">
+          Descripción:
+        </div>
+        <div class="text">
+          {{problem.description}}
+        </div>
+      </div>
+      <div class="results">
+        <div class="sub-franja">
+          Resultados:
+        </div>
+        <div class="text" *ngIf="badSolutions.length == 0 && goodSolutions.length == 0">
+          {{results}}
+        </div>
+        <div class="text" [ngStyle]="{'color': 'green'}" *ngFor="let sol of goodSolutions">
+          {{sol}}
+        </div>
+        <div class="text" [ngStyle]="{'color': 'red'}" *ngFor="let sol of badSolutions">
+          {{sol}}
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="sub-franja">
+        Solucion:
+      </div>
+      <ngs-code-editor
+        [theme]="theme"
+        [codeModel]="codeModel"
+        [options]="options"
+        (valueChanged)="onCodeChanged($event)"
+      >
+      </ngs-code-editor>
+      <button mat-stroked-button color="primary" (click)="sendProblem()">ENVIAR</button>
+    </div>
+  </div>
+</div>
+
+<app-loader *ngIf="sendingProblem"></app-loader>

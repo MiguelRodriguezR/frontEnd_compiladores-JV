@@ -1,0 +1,27 @@
+table{
+  margin-top: 20px;
+  width: 100%;
+}
+
+td, th{
+  text-align: left;
+}
+
+td:first-child, th:first-child {
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.problems{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.problem{
+  margin-right: 4px;
+}
+
+tr:nth-child(even){
+  background-color: #fafafa;
+}
