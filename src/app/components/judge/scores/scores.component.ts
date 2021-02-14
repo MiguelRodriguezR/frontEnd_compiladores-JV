@@ -9,8 +9,8 @@ import {JudgeService} from "../../../services/judge.service";
 })
 export class ScoresComponent implements OnInit {
 
-  users = [];
-  problems = []
+  users: any = [];
+  problems: any = [];
 
   constructor(private sessionService: SessionService, private judgeService: JudgeService) {
   }

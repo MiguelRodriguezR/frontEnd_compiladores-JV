@@ -48,8 +48,8 @@ export class ResolverProblemaComponent implements OnInit {
     return this.judgeService;
   }
 
-  onCodeChanged($event: Event) {
-    this.code = $event;
+  onCodeChanged(e) {
+    this.code = e;
   }
 
   sendProblem() {
